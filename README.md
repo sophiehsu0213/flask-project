@@ -1,8 +1,3 @@
----
-title: 無標題
-
----
-
 
 # 使用 Docker Compose 建置 Flask 與 MySQL 之全端系統
 
@@ -13,7 +8,6 @@ title: 無標題
 
 只要一行指令即可啟動整套服務，並支援資料庫資料持久化（容器重啟資料仍保留）。
 
----
 
 ## 系統架構
 
@@ -26,7 +20,6 @@ title: 無標題
 服務之間透過 Docker Compose 建立的內部網路通訊：  
 後端使用 service name `db` 連線至 MySQL。
 
----
 
 ## 使用技術
 
@@ -36,7 +29,6 @@ title: 無標題
 - MySQL
 - Python
 
----
 
 ## 專案結構
 
@@ -58,7 +50,6 @@ flask-project/
 └─ README.md
 ````
 
----
 
 ## 如何執行專案
 
@@ -69,7 +60,6 @@ flask-project/
 * Docker
 * Docker Compose
 
----
 
 ### 2. 啟動系統
 
@@ -81,7 +71,6 @@ docker compose up --build
 
 > 第一次啟動會建置映像檔並初始化資料庫（若有 `db/init.sql`）。
 
----
 
 ### 3. 存取系統
 
@@ -91,7 +80,6 @@ docker compose up --build
 * API 測試端點（範例）：
   -> [http://localhost:5000/items](http://localhost:5000/items)
 
----
 
 ## API 測試方式
 
@@ -101,7 +89,6 @@ docker compose up --build
 curl http://localhost:5000/items
 ```
 
----
 
 ## 功能說明（CRUD）
 
@@ -110,7 +97,6 @@ curl http://localhost:5000/items
 * 刪除資料（Delete）
 
 
----
 
 ## Docker 說明
 
@@ -122,7 +108,6 @@ curl http://localhost:5000/items
 * 複製專案程式碼
 * 啟動 Flask 服務
 
----
 
 ### docker-compose.yml
 
@@ -137,7 +122,6 @@ Docker Compose 負責協調多個服務：
 * `healthcheck`：確認 MySQL 已可連線後再讓後端開始工作
 * `volumes`：保存 MySQL 資料（持久化）
 
----
 
 ## 資料庫持久化（Volume）
 
@@ -145,7 +129,6 @@ Docker Compose 負責協調多個服務：
 即使容器停止、刪除或重啟，只要 Volume 未被刪除，資料就會保留。
 
 
----
 
 ## 常用指令
 
